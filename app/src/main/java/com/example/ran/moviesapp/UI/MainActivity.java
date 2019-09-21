@@ -1,13 +1,13 @@
 package com.example.ran.moviesapp.UI;
 
-import android.app.LoaderManager;
 import android.content.Intent;
-import android.content.Loader;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     // TODO 14: Override onRestart to restart the Loader in it, so that when the user is back from the settings Activity, the data can be reloaded accordingly
-    
+
 
     @Override
     public Loader<ArrayList<MovieModel>> onCreateLoader(int i, Bundle bundle) {
@@ -69,19 +69,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<ArrayList<MovieModel>> loader, ArrayList<MovieModel> movieModels) {
         //TODO 7: Clear any old data in the movies ArrayList (so in case of a new reload, your app will display only the new data without the old one)
-        
+
         //TODO 8: Add moviesModels ArrayList (returned by the Loader after executing the network request) to movies ArrayList (which is associated with the adapter)
-        
+
         //TODO 9: Notify the adapter that the ArrayList it's associated with (movies) was changed (hint: use notifyDataSetChanged)
-        
+
     }
 
     @Override
     public void onLoaderReset(Loader<ArrayList<MovieModel>> loader) {
         //TODO 10: Clear any old data in the ArrayList associated with the adapter
-        
+
         //TODO 11: Notify the adapter that the ArrayList it's associated with (movies) was changed
-        
+
     }
 
     private String buildURL() {
@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         final String API_KEY = "";
 
         //TODO 4: Get an object of SharedPreferences then get the selected sort value from SharedPreferences and call it "sortByValue"
-        
-        
+
+
 
         //Build the URI according to the selected value
         Uri uri = Uri.parse(BASE_URL);
@@ -112,11 +112,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             builder.appendQueryParameter("sort_by", "vote_average.desc");
         } else {
             //TODO 5: Append a query parameter for the genres (because in this case the user prefers to get best drama movies) and set it's value to 18 (18 is for Drama).
-            
+
         }
 
         //TODO 6: Append a query parameter for your API key
-        
+
         return builder.toString();
     }
 

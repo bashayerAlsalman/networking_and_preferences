@@ -1,7 +1,9 @@
 package com.example.ran.moviesapp.UI;
 
-import android.content.AsyncTaskLoader;
+
+
 import android.content.Context;
+import android.support.v4.content.AsyncTaskLoader;
 
 import com.example.ran.moviesapp.Data.MovieModel;
 import com.example.ran.moviesapp.Utils.JsonUtils;
